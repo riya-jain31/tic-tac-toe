@@ -44,7 +44,7 @@ box.addEventListener("click", () => {
     if (count === 9 && !isWinner) {
     gameDraw();
     }
-});
+}); 
 });
 
 const gameDraw = () => {
@@ -78,11 +78,9 @@ for (let pattern of winPatterns) {
     let pos2Val = boxes[pattern[1]].innerText;
     let pos3Val = boxes[pattern[2]].innerText;
 
-    if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
-    if (pos1Val === pos2Val && pos2Val === pos3Val) {
+    if (pos1Val != "" && pos2Val != "" && pos3Val != "" && (pos1Val === pos2Val && pos2Val === pos3Val)) {
         showWinner(pos1Val);
         return true;
-    }
     }
 }
 };
